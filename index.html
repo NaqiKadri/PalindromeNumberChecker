@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Palindrome Checker</h1>
+        
+        <form id="palindromeForm">
+            <label for="number">Enter a number:</label>
+            <input type="text" id="number" name="number" required>
+            <button type="submit">Check</button>
+            <button type="reset" id="resetButton">Reset</button>
+        </form>
+
+        <div id="result"></div>
+
+        
+        <button id="explanationButton">Get Explanation</button>
+        <div id="explanation" class="hidden">
+            <h2>Explanation for console code</h2>
+            <p>The code checks if a number is a palindrome by following these steps:</p>
+            <ul>
+                <li><strong>Convert the Number to a String:</strong> Convert the number to a string to work with its digits individually.</li>
+                <li><strong>Reverse the String:</strong> Reverse the string to compare it with the original.</li>
+                <li><strong>Compare the Original String with the Reversed String:</strong> If they are identical, the number is a palindrome.</li>
+            </ul>
+            <p>Here's the code:</p>
+            <pre><code>function isPalindrome(number) {
+    const str = number.toString();
+    const reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+}
+
+const number = document.getElementById('number').value;
+
+if (isPalindrome(number)) {
+    console.log("The number ", number, " is Palindrome number");
+} else {
+    console.log("The number ", number, " is not Palindrome number");
+}
+</code></pre>
+    <!-- <button id="videoButton">Watch Video Explanation</button>     
+    cause there is no proper solution for this problem-->
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
